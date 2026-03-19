@@ -53,7 +53,7 @@ app.post('/webhook', async (req, res) => {
     conversationStore[senderId].push({ role: 'assistant', content: aiReply });
     
     await axios.post(
-      `https://graph.instagram.com/v21.0/me/messages`,
+      `https://graph.facebook.com/v21.0/me/messages`,
       {
         recipient: { id: senderId },
         message: { text: aiReply }
